@@ -1,0 +1,20 @@
+# MediaVault Backend — Node.js + yt-dlp + ffmpeg
+# Free deploy korte pari: Render / Koyeb / Hugging Face Spaces (Docker)
+
+FROM node:20-slim
+
+# python + pip + yt-dlp + ffmpeg install
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 python3-pip ffmpeg ca-certificates && \
+    pip3 install --break-system-packages --no-cache-dir yt-dlp && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY package.json ./
+RUN npm install --omit=dev
+COPY server.js ./
+
+ENV PORT=8080
+EXPOSE 8080
+USER node
+CMD ["node", "server.js"]
