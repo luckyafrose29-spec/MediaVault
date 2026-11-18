@@ -1,0 +1,7 @@
+{
+  "name": "Minecraft Java Server",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "vscode"
+}
