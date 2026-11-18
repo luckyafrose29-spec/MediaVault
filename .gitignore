@@ -1,0 +1,36 @@
+# Minecraft runtime data and downloaded server
+.server/
+world/
+world_nether/
+world_the_end/
+logs/
+crash-reports/
+backups/
+*.jar
+*.jar.tmp
+*.log
+usercache.json
+ops.json
+banned-ips.json
+banned-players.json
+whitelist.json
+eula.txt
+playit.toml
+*.tar.gz
+__pycache__/
+
+# Paper runtime data (never commit plugin data or generated configuration)
+plugins/*
+!plugins/README.md
+mods/*
+!mods/README.md
+config/
+cache/
+libraries/
+versions/
+bukkit.yml
+spigot.yml
+paper.yml
+commands.yml
+permissions.yml
+help.yml
